@@ -1,0 +1,9 @@
+# VIRTUAL ENVIRONMENTS
+venv/
+.venv/
+
+# DBT PROJECT .GITIGNORE
+airbnb/.gitignore
+
+# VSCODE
+.vscode/
