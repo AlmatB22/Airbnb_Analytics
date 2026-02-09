@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='view'
+    )
+}}
+
 with listings as (
     select *
     from {{ref('stg_airbnb__listings')}}

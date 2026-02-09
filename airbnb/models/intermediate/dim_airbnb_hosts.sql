@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='view'
+    )
+}}
+
 with hosts as (
     select *
     from {{ref('stg_airbnb__hosts')}}
