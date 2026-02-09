@@ -36,4 +36,6 @@ models:
       +materialized: ephemeral
     intermediate: 
       +materialized: table
+    mart:
+      +materialized: table
     
