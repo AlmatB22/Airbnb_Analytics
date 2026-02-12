@@ -1,6 +1,6 @@
 with hosts as (
     select *
-    from {{ref('dim_airbnb_hosts')}}
+    from {{ref('dim_airbnb__hosts')}}
 ),
 listings as (
     select *
