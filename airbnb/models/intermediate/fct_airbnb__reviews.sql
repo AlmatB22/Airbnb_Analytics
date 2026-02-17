@@ -10,7 +10,9 @@ with reviews as (
     from {{ref('stg_airbnb__reviews')}}
 )
 
-select *
+select 
+{{ dbt_utils.generate_surrogate_key(['LISTING_ID', 'REVIEWER_NAME', 'REVIEW_DATE', 'REVIEW_TEXT']) }} as review_id,
+*
 from reviews
 where review_text is not null
 {% if is_incremental() %}

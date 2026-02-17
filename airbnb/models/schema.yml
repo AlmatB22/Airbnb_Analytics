@@ -1,5 +1,6 @@
 models: 
   - name: dim_airbnb__listings
+    description: Cleansed table which contains Airbnb listings.
     data_tests:
       - min_row_count:
           arguments:
@@ -8,11 +9,13 @@ models:
             severity: 'warn'
     columns:
       - name: listing_id
+        description: Primary key for the listings.
         data_tests: 
           - unique
           - not_null
     
       - name: host_id
+        description: The host's id. References host table.
         data_tests:
           - not_null
           - relationships: 
@@ -21,6 +24,7 @@ models:
                 field: host_id
     
       - name: room_type
+        description: Type of the appartement / room.
         data_tests:
           - accepted_values:
               arguments:    
