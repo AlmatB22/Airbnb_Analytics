@@ -36,20 +36,37 @@ models:
           - positive_values
 
   - name: dim_airbnb__hosts
-    config: 
+    description: '{{ doc("dim_airbnb__hosts") }}'
+    config:
       contract:
         enforced: true
-    columns: 
+    columns:
       - name: host_id
+        description: Primary key for the hosts table. Sourced from `raw_hosts.id`.
         data_type: integer
+        data_tests:
+          - unique
+          - not_null
       - name: host_name
+        description: '{{ doc("dim_airbnb__hosts__host_name") }}'
         data_type: string
       - name: is_superhost
+        description: '{{ doc("dim_airbnb__hosts__is_superhost") }}'
         data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t', 'f']
       - name: created_at
+        description: Timestamp when the host record was first created in the source system.
         data_type: timestamp
+        data_tests:
+          - not_null
       - name: updated_at
+        description: Timestamp of the most recent update to the host record in the source system.
         data_type: timestamp
+        data_tests:
+          - not_null
 
 
         
