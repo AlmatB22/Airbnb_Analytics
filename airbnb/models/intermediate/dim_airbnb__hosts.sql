@@ -12,7 +12,10 @@ with hosts as (
 select 
     host_id,
     NVL(host_name, 'Anonymous') as host_name,
-    is_superhost,
+    case 
+        when (is_superhost is NULL) then 'f'
+        else is_superhost
+    end as is_superhost,
     created_at,
     updated_at
 from hosts

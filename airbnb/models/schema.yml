@@ -54,6 +54,7 @@ models:
         description: '{{ doc("dim_airbnb__hosts__is_superhost") }}'
         data_type: string
         data_tests:
+          - not_null
           - accepted_values:
               arguments:
                 values: ['t', 'f']
