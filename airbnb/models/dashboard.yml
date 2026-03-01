@@ -1,0 +1,14 @@
+exposures:
+  - name: executive dashboard
+    label: Executive Dashboard
+    type: dashboard
+    url: https://4b3f5266.us2a.app.preset.io/superset/dashboard/8/?native_filters_key=_m4ty_2LGMg
+    maturity: low
+
+    owner: # supports 'name' and 'email' only
+      name: Almat Bolatbekov    
+      email: almat.bolatbek22@gmail.com
+    
+    depends_on:
+      - ref('dim__listings_w_hosts')
+      - ref('mart__full_moon_reviews')
